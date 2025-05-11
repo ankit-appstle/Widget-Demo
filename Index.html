@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Options</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="purchase-options">
+            <h2>Purchase Options final</h2>
+            
+            <!-- One Time Purchase Option -->
+            <div class="option" data-option="onetime">
+                <div class="option-header">
+                    <div class="option-title">
+                        <div class="radio-button">
+                            <div class="radio-inner"></div>
+                        </div>
+                        <span>One Time Purchase test</span>
+                    </div>
+                    <span class="price">$270.00</span>
+                </div>
+                <div class="option-details">
+                    <span class="discount">bundle discount extra: 10% off</span>
+                </div>
+            </div>
+            
+            <!-- Subscription Option -->
+            <div class="option selected" data-option="subscription">
+                <div class="option-header">
+                    <div class="option-title">
+                        <div class="radio-button">
+                            <div class="radio-inner"></div>
+                        </div>
+                        <span>Subscribe and save</span>
+                    </div>
+                    <span class="price">$300.00</span>
+                </div>
+                <div class="option-details">
+                    <span>Monthly Subscription</span>
+                    
+                    <!-- Loyalty Benefits Section with Background -->
+                    <div class="loyalty-section">
+                        <div class="loyalty-benefits">
+                            <div class="benefit-container">
+                                <!-- Benefits will be inserted here by JavaScript -->
+                            </div>
+                            
+                            <!-- Pagination Dots -->
+                            <div class="pagination-dots">
+                                <!-- Dots will be inserted here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subscription Detail Button -->
+            <div class="subscription-detail" id="subscription-detail">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Subscription detail</span>
+            </div>
+            
+            <!-- Action Buttons -->
+            <button class="btn btn-outline">Add to cart</button>
+            <button class="btn btn-primary">Buy it now</button>
+        </div>
+    </div>
+    
+    <!-- Loyalty Modal -->
+    <div class="modal" id="loyalty-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Loyalty Benefits</h3>
+                <button class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="benefits-list">
+                    <!-- Benefits will be inserted here by JavaScript -->
+                </div>
+                <div class="loyalty-info">
+                    <h4>How Loyalty Works</h4>
+                    <p>Subscribe to unlock exclusive benefits and rewards. Our loyalty program offers rotating benefits that change monthly, giving you more value with each subscription.</p>
+                </div>
+            </div>
+            <button class="btn btn-primary close-modal">Got it</button>
+        </div>
+    </div>
+    
+    <script src="Script.js"></script>
+</body>
+</html>
