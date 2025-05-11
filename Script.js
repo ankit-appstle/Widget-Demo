@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const options = document.querySelectorAll('.option');
     const benefitContainer = document.querySelector('.benefit-container');
-    const paginationDotsContainer = document.querySelector('.pagination-dots');
     const subscriptionDetail = document.getElementById('subscription-detail');
     const modal = document.getElementById('loyalty-modal');
     const closeButtons = document.querySelectorAll('.close-btn, .close-modal, .modal-backdrop');
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize benefits
     let currentBenefitIndex = 0;
-    let benefitInterval;
     
     // Create benefit elements
     loyaltyBenefits.forEach((benefit, index) => {
@@ -37,12 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         benefitElement.className = `benefit ${index === 0 ? 'active' : ''}`;
         benefitElement.innerHTML = `+${benefit.title}`;
         benefitContainer.appendChild(benefitElement);
-        
-        // Create pagination dot
-        const dot = document.createElement('div');
-        dot.className = `dot ${index === 0 ? 'active' : ''}`;
-        dot.dataset.index = index;
-        paginationDotsContainer.appendChild(dot);
     });
 
     // Create benefit items in modal
@@ -67,48 +59,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Function to show a specific benefit
-    function showBenefit(index) {
-        const benefits = document.querySelectorAll('.benefit');
-        const dots = document.querySelectorAll('.dot');
-        
-        // Remove active class from all benefits and dots
-        benefits.forEach(benefit => benefit.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to selected benefit and dot
-        benefits[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-        // Update current index
-        currentBenefitIndex = index;
-    }
-
     // Rotate benefits every 5 seconds
-    function startRotation() {
-        benefitInterval = setInterval(() => {
-            const nextIndex = (currentBenefitIndex + 1) % loyaltyBenefits.length;
-            showBenefit(nextIndex);
-        }, 5000);
+    function rotateBenefits() {
+        const benefits = document.querySelectorAll('.benefit');
+        
+        // Remove active class from current benefit
+        benefits[currentBenefitIndex].classList.remove('active');
+        
+        // Update index
+        currentBenefitIndex = (currentBenefitIndex + 1) % benefits.length;
+        
+        // Add active class to new current benefit
+        benefits[currentBenefitIndex].classList.add('active');
     }
 
     // Start rotating benefits
-    startRotation();
-
-    // Handle pagination dot clicks
-    paginationDotsContainer.addEventListener('click', function(e) {
-        if (e.target.classList.contains('dot')) {
-            // Clear the interval to prevent conflicts
-            clearInterval(benefitInterval);
-            
-            // Show the clicked benefit
-            const index = parseInt(e.target.dataset.index);
-            showBenefit(index);
-            
-            // Restart the rotation
-            startRotation();
-        }
-    });
+    const benefitInterval = setInterval(rotateBenefits, 5000);
 
     // Open modal when subscription detail is clicked
     subscriptionDetail.addEventListener('click', function() {
