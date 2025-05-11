@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loyaltyBenefits = [
         {
             id: 1,
-            title: "Freee Testosterone Optimization E-book 📚",
+            title: "Free Testosterone Optimization E-book 📚",
             description: "A comprehensive guide to optimize your health"
         },
         {
