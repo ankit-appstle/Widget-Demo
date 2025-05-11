@@ -96,26 +96,14 @@ h2 {
     color: #666;
 }
 
-/* Loyalty Section with Background */
-.loyalty-section {
-    margin-top: 8px;
-    /* margin-left: -28px; */
-    width: 100%; /* Full width + padding offset */
-    background-color: #f7f7f7;
-    padding: 10px 28px;
-    border-radius: 4px;
-    height: 100%;
-}
-
 .loyalty-benefits {
-    height: 50px; /* Increased height to accommodate pagination */
+    height: 24px;
     overflow: hidden;
+    margin-top: 4px;
 }
 
 .benefit-container {
     position: relative;
-    height: 24px;
-    margin-bottom: 8px;
 }
 
 .benefit {
@@ -126,34 +114,11 @@ h2 {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    font-weight: 500;
-    color: #333;
 }
 
 .benefit.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Pagination Dots */
-.pagination-dots {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 4px;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #666;
 }
 
 .subscription-detail {
@@ -292,7 +257,7 @@ h2 {
 }
 
 .loyalty-info {
-    background-color: #f7f7f7;
+    background-color: #f9f9f9;
     padding: 16px;
     border-radius: 6px;
     margin-bottom: 20px;
