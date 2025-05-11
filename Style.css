@@ -97,9 +97,10 @@ h2 {
 }
 
 .loyalty-benefits {
-    height: 24px;
+    height: 16px;
     overflow: hidden;
     margin-top: 4px;
+    position: relative;
 }
 
 .benefit-container {
@@ -275,9 +276,34 @@ h2 {
     color: #666;
 }
 .loyalty-details{
-    width: 100%;
-    background: antiquewhite;
-    border: 1px solid black;
     border-radius: 5px;
     margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 3px;
+    background: #f6f1eb;
+}
+.pagination-dots {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.pagination-dots .dot.active {
+    background-color: #333;
 }

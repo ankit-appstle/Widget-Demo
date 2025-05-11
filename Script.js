@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Start rotating benefits
-    const benefitInterval = setInterval(rotateBenefits, 5000);
+    const benefitInterval = setInterval(rotateBenefits, 2000);
 
     // Open modal when subscription detail is clicked
     subscriptionDetail.addEventListener('click', function() {
@@ -99,4 +99,37 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('beforeunload', function() {
         clearInterval(benefitInterval);
     });
+    const paginationDotsContainer = document.querySelector('.pagination-dots');
+
+    // Create pagination dots
+    loyaltyBenefits.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = `dot ${index === 0 ? 'active' : ''}`;
+        dot.dataset.index = index;
+        paginationDotsContainer.appendChild(dot);
+
+        // Dot click behavior
+        dot.addEventListener('click', function () {
+            setBenefitActive(parseInt(this.dataset.index));
+        });
+    });
+
+    function setBenefitActive(index) {
+        const benefits = document.querySelectorAll('.benefit');
+        const dots = document.querySelectorAll('.dot');
+
+        benefits[currentBenefitIndex].classList.remove('active');
+        dots[currentBenefitIndex].classList.remove('active');
+
+        currentBenefitIndex = index;
+
+        benefits[currentBenefitIndex].classList.add('active');
+        dots[currentBenefitIndex].classList.add('active');
+    }
+
+    function rotateBenefits() {
+        const nextIndex = (currentBenefitIndex + 1) % loyaltyBenefits.length;
+        setBenefitActive(nextIndex);
+    }
+
 });
