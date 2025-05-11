@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const options = document.querySelectorAll('.option');
     const benefitContainer = document.querySelector('.benefit-container');
-    const subscriptionDetail = document.getElementById('subscription-detail');
+    const subscriptionDetail = document.getElementById('loyalty-details');
     const modal = document.getElementById('loyalty-modal');
     const closeButtons = document.querySelectorAll('.close-btn, .close-modal, .modal-backdrop');
     const benefitsList = document.querySelector('.benefits-list');

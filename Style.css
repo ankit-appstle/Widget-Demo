@@ -104,6 +104,8 @@ h2 {
 
 .benefit-container {
     position: relative;
+    margin-left:25px;
+    font-size: 13px;
 }
 
 .benefit {
@@ -271,4 +273,11 @@ h2 {
 .loyalty-info p {
     font-size: 14px;
     color: #666;
+}
+.loyalty-details{
+    width: 100%;
+    background: antiquewhite;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
 }
